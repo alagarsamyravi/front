@@ -18,7 +18,7 @@ function App() {
     const handleLogin = async (loginData) => {
         try {
             console.log(loginData);
-            const response = await fetch('api/login', { // Correct the backend URL
+            const response = await fetch('http://localhost:5000/api/login', { // Correct the backend URL
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData)
@@ -41,7 +41,7 @@ function App() {
     
     const handleSignup = async (signupData) => {
         try {
-            const response = await fetch('/api/signup', {
+            const response = await fetch('http://localhost:5000/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(signupData)
@@ -55,7 +55,7 @@ function App() {
 
     const handleEdit = async () => {
         try {
-            const response = await fetch(`/api/user/${userData.email}`, {
+            const response = await fetch(`http://localhost:5000/api/user/${userData.email}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editedUserData)
